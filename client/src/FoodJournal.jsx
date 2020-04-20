@@ -6,7 +6,12 @@ class FoodJournal extends Component {
     super(props);
     this.state = {
       foodName: '',
-      listOfFoods: ['pie']
+      calories: 0,
+      carbs: 0,
+      sugar: 0,
+      fat: 0,
+      other: '',
+      listOfFoods: []
 
     };
 
@@ -16,14 +21,15 @@ class FoodJournal extends Component {
 
   handleChange(event) {
     this.setState({ foodName: event.target.value })
-    // console.log(this.state.foodName);
+    console.log("we're entering food name:", this.state.foodName);
   }
   handleSubmit(event) {
     //save to database
-    this.state.listOfFoods.push(this.state.foodName);
+    event.preventDefault();
+    let foodList = this.state.listOfFoods;
+    foodList.push(this.state.foodName);
     // this.setState({ foodName: event.target.value })
-    // event.preventDefault();
-    console.log(this.state.listOfFood);
+    console.log("are we logging anything?", this.state.listOfFoods);
   }
 
   render() {
@@ -57,7 +63,7 @@ class FoodJournal extends Component {
               onChange={this.handleInputChange} />
           </label> */}
           <br />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick={this.handleSubmit} />
         </form>
         <p> Food Eaten: {food} </p>
       </div>
