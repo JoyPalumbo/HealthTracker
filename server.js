@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../client/public')));
 
 const saveWater = require('./database/index');
+const saveNutrition = require('./database/index');
 
 app.post('/water', (req, res) => {
   saveWater.saveWater(req.body.ounces);
@@ -20,6 +21,13 @@ app.post('/water', (req, res) => {
   );
 });
 
+app.post('/nutrition', (req, res) => {
+  saveNutrition.saveNutrition(req.body.nutrition);
+  console.log("logging from route", req.body);
+  res.send(
+    `Server received nutrition info: ${req.body}`,
+  );
+})
 // app.get('/api/hello', (req, res) => {
 //   res.send({ express: 'Hello From Express' });
 // });
