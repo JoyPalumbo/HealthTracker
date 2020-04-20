@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 class FoodJournal extends Component {
   constructor(props) {
@@ -30,6 +31,22 @@ class FoodJournal extends Component {
     foodList.push(this.state.foodName);
     // this.setState({ foodName: event.target.value })
     console.log("are we logging anything?", this.state.listOfFoods);
+    axios.post('/nutrition', {
+      nutrition: {
+        foodName: this.state.foodName,
+        calories: this.state.calories,
+        carbs: this.state.carbs,
+        sugar: this.state.sugar,
+        fat: this.state.fat,
+        other: this.state.other
+      }
+    })
+      .then((response) => {
+        console.log("sending nutrition to server", response)
+      })
+      .catch(err => {
+        console.log("ops, didn't send nutrition to server", err);
+      })
   }
 
   render() {
@@ -40,33 +57,59 @@ class FoodJournal extends Component {
           <label>
             Food Name:
           <input
-              name="nameOfItem"
+              name="foodName"
               type="text"
               // value={this.state.foodName}
               onChange={this.handleChange} />
           </label>
           <br />
-          {/* <label>
-            Number of items:
+          <label>
+            Calories:
           <input
-              name="numberOfItems"
+              name="calories"
               type="number"
-              value={this.state.numberOfItems}
               onChange={this.handleInputChange} />
-          </label> */}
-          {/* <label>
-            Description of Item:
+          </label>
+          <br />
+          <label>
+            Carbs:
           <input
-              name="descriptionOfItem"
-              type="text"
-              value={this.state.descriptionOfItem}
+              name="carbs"
+              type="number"
               onChange={this.handleInputChange} />
-          </label> */}
+          </label>
+          <br />
+          <label>
+            Sugar:
+          <input
+              name="sugar"
+              type="number"
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Fat:
+          <input
+              name="fat"
+              type="number"
+              onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+            Additional Info:
+          <input
+              name="other"
+              type="number"
+              onChange={this.handleInputChange} />
+          </label>
+
+
+
           <br />
           <input type="submit" value="Submit" onClick={this.handleSubmit} />
         </form>
-        <p> Food Eaten: {food} </p>
-      </div>
+        {/* <p> Food Eaten: {food} </p> */}
+      </div >
     );
   }
 }
