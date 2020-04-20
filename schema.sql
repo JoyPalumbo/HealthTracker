@@ -8,9 +8,10 @@ CREATE TABLE food (
   id int NOT NULL AUTO_INCREMENT,
   food_name varchar(50) NOT NULL,
    calories int,
-   fat int, 
    carbs int,
    sugar int,
+   fat int, 
+   other int,
    amount int,
   PRIMARY KEY (ID)
 );
