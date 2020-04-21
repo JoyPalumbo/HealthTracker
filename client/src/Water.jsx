@@ -20,9 +20,11 @@ class Water extends Component {
   }
 
   handleSubmit(event) {
-    let ounces = parseInt(this.state.total) + parseInt(this.state.ounces);
-    this.setState({ total: ounces })
     event.preventDefault();
+    let ounces2 = parseInt(this.state.total) + parseInt(this.state.ounces);
+    //ounces2 is console logging correctly
+    console.log(ounces2, "this is ounces, total");
+    this.setState({ total: ounces2 })
     //Total is always one entry behind
     console.log("is the total working?", this.state.total);
     axios.post('/water', {

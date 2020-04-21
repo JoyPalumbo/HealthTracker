@@ -22,8 +22,8 @@ app.post('/water', (req, res) => {
 });
 
 app.post('/nutrition', (req, res) => {
-  saveNutrition.saveNutrition(req.body.nutrition);
-  console.log("logging from route", req.body);
+  saveNutrition.saveNutrition(req.body);
+  console.log("logging from router", req.body);
   res.send(
     `Server received nutrition info: ${req.body}`,
   );

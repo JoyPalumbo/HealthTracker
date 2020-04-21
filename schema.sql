@@ -11,7 +11,7 @@ CREATE TABLE food (
    carbs int,
    sugar int,
    fat int, 
-   other int,
+   other varchar(100),
    amount int,
   PRIMARY KEY (ID)
 );
