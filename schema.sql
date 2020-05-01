@@ -25,8 +25,20 @@ CREATE TABLE water (
 
 CREATE TABLE exercise (
   id int NOT NULL AUTO_INCREMENT,
-  notes varchar(200) NOT NULL,
-  minutes int not null,
+  exercise varchar(100) Not null,
+  notes varchar(200),
+  minutes int,
+  reps int,
+  PRIMARY KEY (ID)
+);
+
+CREATE TABLE profile (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(100) Not null,
+  weight_goal int ,
+  current_weight int,
+  water_goal int,
+  calorie_goal int,
   PRIMARY KEY (ID)
 );
 
