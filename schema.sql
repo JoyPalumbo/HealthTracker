@@ -13,12 +13,14 @@ CREATE TABLE food (
    fat int, 
    other varchar(100),
    amount int,
+    col TIMESTAMP NOT NULL,
   PRIMARY KEY (ID)
 );
 
 CREATE TABLE water (
   id int NOT NULL AUTO_INCREMENT,
   ounces int not null,
+  col TIMESTAMP NOT NULL,
   PRIMARY KEY (ID)
 );
 
@@ -29,6 +31,7 @@ CREATE TABLE exercise (
   notes varchar(200),
   minutes int,
   reps int,
+  col TIMESTAMP NOT NULL,
   PRIMARY KEY (ID)
 );
 
@@ -39,11 +42,13 @@ CREATE TABLE profile (
   current_weight int,
   water_goal int,
   calorie_goal int,
+  col TIMESTAMP NOT NULL,
   PRIMARY KEY (ID)
 );
 
 
 /*  Execute this file from the command line by typing:
  *    //mysql -u root -p
- mysql -u root < server/schema.sql
+ /in seperate termimal enter below command to update database
+ mysql -u root < schema.sql
  *  to create the database and the tables.*/
