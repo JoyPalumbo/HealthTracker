@@ -8,6 +8,7 @@ class Profile extends Component {
     this.state = {
       name: '',
       weightGoal: 0,
+      currentWeight: 0,
       waterGoal: 0,
       calorieGoal: 0
     };
@@ -27,7 +28,8 @@ class Profile extends Component {
     // //ounces2 is console logging correctly
     // console.log(ounces2, "this is ounces, total");
     this.setState({ weightGoal: event.target.value })
-    console.log(this.state.weightGoal);
+    console.log(event.target.value);
+    // console.log(this.state.weightGoal);
     // //Total is always one entry behind
     // console.log("is the total working?", this.state.total);
     // axios.post('/water', {
@@ -54,16 +56,48 @@ class Profile extends Component {
           Profile
           </p>
         <p>
-          <strong>Enter weight goal</strong>
+          <strong>Goals</strong>
         </p>
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text"
-              onChange={this.handleChange} />
+            What is your weight goal?
+          <input
+              name="goalWeight"
+              type="number"
+              onChange={this.handleInputChange} />
           </label>
+          <p> Your weight goal is: {this.state.weightGoal}</p>
+          <br />
+          <label>
+            What is your current weight
+          <input
+              name="currentWeight"
+              type="number"
+              onChange={this.handleInputChange} />
+          </label>
+          <p> Your current weight is: {this.state.currentWeight}</p>
+          <br />
+          <label>
+            What is your water intake goal in ounces?
+          <input
+              name="waterGoal"
+              type="number"
+              onChange={this.handleInputChange} />
+          </label>
+          <p> Your weight goal is: {this.state.waterGoal}</p>
+          <br />
+          <label>
+            What is your calories eaten per day goal?
+          <input
+              name="calorieGoal"
+              type="number"
+              onChange={this.handleInputChange} />
+          </label>
+          <p> Your weight goal is: {this.state.calorieGoal}</p>
+          <br />
           <input type="submit" value="Submit" />
         </form>
-        <p> Your weight goal is: {this.state.weightGoal}</p>
+
       </div>
 
     );
