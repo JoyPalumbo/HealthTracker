@@ -12,6 +12,8 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 
 const saveWater = require('./database/index');
 const saveNutrition = require('./database/index');
+const saveExercise = require('./database/index');
+const saveProfile = require('./database/index');
 
 app.post('/water', (req, res) => {
   saveWater.saveWater(req.body.ounces);
@@ -28,9 +30,22 @@ app.post('/nutrition', (req, res) => {
     `Server received nutrition info: ${req.body}`,
   );
 })
-// app.get('/api/hello', (req, res) => {
-//   res.send({ express: 'Hello From Express' });
-// });
+
+app.post('/exercise', (req, res) => {
+  saveExercise.saveExercise(req.body);
+  console.log("logging exercise from router", req.body);
+  res.send(
+    `Server received nutrition info: ${req.body}`,
+  );
+})
+
+app.post('/profile', (req, res) => {
+  saveProfile.saveProfile(req.body);
+  console.log("logging profile from router", req.body);
+  res.send(
+    `Server received nutrition info: ${req.body}`,
+  );
+})
 
 
 
