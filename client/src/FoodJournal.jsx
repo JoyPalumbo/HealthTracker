@@ -53,61 +53,68 @@ class FoodJournal extends Component {
     const food = this.state.foodName;
     return (
       <div>
-        <form>
-          <label>
-            Food Name:
+        <div className="wrapper">
+          <div className="form-wrapper">
+            <form>
+              <label>
+                Food Name:
           <input
-              name="foodName"
-              type="text"
-              // value={this.state.foodName}
-              onChange={this.handleChange} />
-          </label>
-          <br />
-          <label>
-            Calories:
+                  name="foodName"
+                  type="text"
+                  class="form-control"
+                  // value={this.state.foodName}
+                  onChange={this.handleChange} />
+              </label>
+              <br />
+              <label>
+                Calories:
           <input
-              name="calories"
-              type="number"
-              onChange={this.handleInputChange} />
-          </label>
-          <br />
-          <label>
-            Carbs:
+                  name="calories"
+                  type="number"
+                  class="form-control"
+                  onChange={this.handleInputChange} />
+              </label>
+              <br />
+              <label>
+                Carbs:
           <input
-              name="carbs"
-              type="number"
-              onChange={this.handleInputChange} />
-          </label>
-          <br />
-          <label>
-            Sugar:
+                  name="carbs"
+                  type="number"
+                  class="form-control"
+                  onChange={this.handleInputChange} />
+              </label>
+              <br />
+              <label>
+                Sugar:
           <input
-              name="sugar"
-              type="number"
-              onChange={this.handleInputChange} />
-          </label>
-          <br />
-          <label>
-            Fat:
+                  name="sugar"
+                  type="number"
+                  class="form-control"
+                  onChange={this.handleInputChange} />
+              </label>
+              <br />
+              <label>
+                Fat:
           <input
-              name="fat"
-              type="number"
-              onChange={this.handleInputChange} />
-          </label>
-          <br />
-          <label>
-            Additional Info:
+                  name="fat"
+                  type="number"
+                  class="form-control"
+                  onChange={this.handleInputChange} />
+              </label>
+              <br />
+              <label>
+                Additional Info:
           <input
-              name="other"
-              type="number"
-              onChange={this.handleInputChange} />
-          </label>
-
-
-
-          <br />
-          <input type="submit" value="Submit" onClick={this.handleSubmit} />
-        </form>
+                  name="other"
+                  type="number"
+                  class="form-control"
+                  onChange={this.handleInputChange} />
+              </label>
+              <br />
+              <input type="submit" value="Submit" class="form-control" onClick={this.handleSubmit} />
+            </form>
+          </div>
+        </div>
         {/* <p> Food Eaten: {food} </p> */}
       </div >
     );
