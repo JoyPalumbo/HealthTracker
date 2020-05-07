@@ -3,6 +3,7 @@ import './App.css';
 import Water from './Water';
 import Profile from './Profile';
 import Exercise from './Exercise';
+import Prev from './Prev';
 import Home from './Home';
 import FoodJournal from './FoodJournal';
 import Toolbar from './Toolbar/Toolbar';
@@ -99,11 +100,14 @@ class App extends Component {
           <Router>
             <Route path="/food" component={FoodJournal} />
           </Router>
-          {/* <Router>
+          <Router>
             <Route path="/exercise" component={Exercise} />
-          </Router> */}
+          </Router>
           <Router>
             <Route path="/profile" component={Profile} />
+          </Router>
+          <Router>
+            <Route path="/prev" component={Prev} />
           </Router>
           {/* <ul>
               <li>
