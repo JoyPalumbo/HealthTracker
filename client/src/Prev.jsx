@@ -24,16 +24,17 @@ class Prev extends Component {
   onChange = date => {
     this.setState({ date })
     console.log('this is your selected date', this.state.date)
-    axios.post('/prev', {
-      date: this.state.date
+    axios.get(`http://localhost:3000/prev/${this.state.date}`, {
+      // date: this.state.date
     })
       .then((response) => {
-        console.log("sending date selected to server", response)
+        console.log("sending date selected to server!!!!!!!!!!!!!!!!!!!", response)
       })
       .catch(err => {
         console.log("ops, didn't send selected date to server", err);
       })
   }
+
   // handleChange(event) {
   //   this.setState({ ounces: event.target.value })
   // }

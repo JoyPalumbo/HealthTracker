@@ -14,6 +14,8 @@ const saveWater = require('./database/index');
 const saveNutrition = require('./database/index');
 const saveExercise = require('./database/index');
 const saveProfile = require('./database/index');
+const getFood = require('./database/index');
+const getWater = require('./database/index');
 
 app.post('/water', (req, res) => {
   saveWater.saveWater(req.body.ounces);
@@ -46,6 +48,46 @@ app.post('/profile', (req, res) => {
     `Server received nutrition info: ${req.body}`,
   );
 })
+
+app.get('/prev/:date', (req, res) => {
+  console.log(req.params.date);
+  // getPrev.getPrev((err, prev) => {
+  //   if(err) {
+  //     console.log('error getting previous date from db', err);
+  //     res.sendStatus(500);
+  //   }
+  //   else {
+  //     console.log("getting previous from db", prev);
+  //     res.json(prev)
+  //   }
+  // })
+})
+
+//****test this****
+app.get('/food', (req, res) => {
+  getFood.getFood((err, food) => {
+    if (err) {
+      console.log('error getting food from db', err);
+      res.sendStatus(500);
+    } else {
+      console.log("getting food from db:", food);
+      res.json(food);
+    }
+  })
+});
+
+app.get('/water', (req, res) => {
+  getWater.getWater((err, water) => {
+    if (err) {
+      console.log('error getting water from db', err);
+      res.sendStatus(500);
+    } else {
+      console.log("getting water from db:", water);
+      res.json(water);
+    }
+  });
+});
+
 
 
 
