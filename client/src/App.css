@@ -26,9 +26,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color:  */
+ 
 }
 
+/* box around input */
 .form-wrapper {
   width: 300px;
   display: flex;
@@ -39,8 +40,21 @@
   background-color: #ffffff;
 }
 
+/* for input fields */
+.form-control {
+  width: 200px;
+  display: flex;
+  margin-left: 50px
+}
+
 form {
   width: 100px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.web-title {
+  font-family: "Avantgarde", Times, serif;
+  font-style: italic;
+  font-weight: 900;
 }

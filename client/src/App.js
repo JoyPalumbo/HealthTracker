@@ -87,9 +87,12 @@ class App extends Component {
           {sideDrawer}
           {backdrop}
           <main style={{ marginTop: '64px' }}>
-            <p>
-              Health Diary
-          </p>
+            <div className="web-title">
+
+              <h1>
+                Health Diary
+          </h1>
+            </div>
           </main>
           <Router>
             <Route path="/home" component={Home} />
@@ -109,35 +112,6 @@ class App extends Component {
           <Router>
             <Route path="/prev" component={Prev} />
           </Router>
-          {/* <ul>
-              <li>
-                <Link to="/water">Water</Link>
-              </li>
-              <li>
-                <Link to="/nutrition">Nutrition</Link>
-              </li>
-            </ul>  */}
-          {/* </div> */}
-          {/* </div> */}
-          {/* <Switch>
-              <Route path="/water">
-                <Water />
-              </Route>
-              <Route path="/nutrition">
-                <FoodJournal />
-              </Route> */}
-          {/* <Route path="/">
-            <Home />
-          </Route> */}
-          {/* </Switch>
-          </Router> */}
-          {/* </header> */}
-          {/* <p>{this.state.response}</p> */}
-          {/* <div> */}
-          {/* <form onSubmit={this.handleSubmit}> */}
-          {/*           
-          <Water />
-          <FoodJournal /> */}
         </div>
       </div>
     );

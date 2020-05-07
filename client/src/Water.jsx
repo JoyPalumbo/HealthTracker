@@ -7,7 +7,8 @@ class Water extends Component {
     super(props);
     this.state = {
       ounces: 0,
-      total: 0
+      total: 0,
+      log: []
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -39,12 +40,21 @@ class Water extends Component {
   }
 
   componentDidMount() {
+    axios.get('/water')
+      .then(response => {
+        this.setState({ log: response.data })
+        console.log(this.state.log);
+      })
+      .catch(err => {
+        console.log(err);
+      })
 
   }
 
 
   render() {
-    const ounces = this.state.total
+    const ounces = this.state.total;
+    const log = this.state.log;
     return (
       <div className="water">
         <p>
@@ -53,15 +63,28 @@ class Water extends Component {
         <p>
           <strong>Enter ounces you've drank</strong>
         </p>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+        <div className="wrapper">
+          <div className="form-wrapper">
+            <form onSubmit={this.handleSubmit}>
+              <label>
 
-            <input type="text"
-              onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+                <input type="text"
+                  onChange={this.handleChange} />
+              </label>
+              <input type="submit" value="Submit" className="form-control" />
+            </form>
+          </div>
+        </div>
         <p> You have drank {ounces} ounces</p>
+        <p>Log of previous days</p>
+        {log.map(day => {
+          return (
+            <div>
+              <li>Day: {day.col}</li>
+              <li> Ounces: {day.ounces}</li>
+            </div>
+          );
+        })}
       </div>
 
     );

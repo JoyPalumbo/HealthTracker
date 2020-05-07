@@ -61,7 +61,7 @@ class FoodJournal extends Component {
           <input
                   name="foodName"
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   // value={this.state.foodName}
                   onChange={this.handleChange} />
               </label>
@@ -71,7 +71,7 @@ class FoodJournal extends Component {
           <input
                   name="calories"
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   onChange={this.handleInputChange} />
               </label>
               <br />
@@ -80,7 +80,7 @@ class FoodJournal extends Component {
           <input
                   name="carbs"
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   onChange={this.handleInputChange} />
               </label>
               <br />
@@ -89,7 +89,7 @@ class FoodJournal extends Component {
           <input
                   name="sugar"
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   onChange={this.handleInputChange} />
               </label>
               <br />
@@ -98,7 +98,7 @@ class FoodJournal extends Component {
           <input
                   name="fat"
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   onChange={this.handleInputChange} />
               </label>
               <br />
@@ -107,11 +107,11 @@ class FoodJournal extends Component {
           <input
                   name="other"
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   onChange={this.handleInputChange} />
               </label>
               <br />
-              <input type="submit" value="Submit" class="form-control" onClick={this.handleSubmit} />
+              <input type="submit" value="Submit" className="form-control" onClick={this.handleSubmit} />
             </form>
           </div>
         </div>
