@@ -24,6 +24,9 @@ const Toolbar = props => (
             <li>
               <a href="/profile">Profile</a>
             </li>
+            <li>
+              <a href="/prev">Previous</a>
+            </li>
           </ul>
         </div>
       </div>
