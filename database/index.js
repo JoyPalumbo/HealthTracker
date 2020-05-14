@@ -56,6 +56,7 @@ const saveExercise = (data) => {
   });
 };
 
+
 const saveProfile = (data) => {
   let newProfile = {
     name: data.name,
@@ -74,10 +75,52 @@ const saveProfile = (data) => {
   });
 };
 
+const getFood = (cb) => {
+  connection.query('select * from food', (err, food) => {
+    if (err) {
+      callback(err);
+    }
+    else {
+      callback(null, food);
+    }
+  });
+};
+
+const getWater = (callback) => {
+  connection.query('select * from water', (err, water) => {
+    if (err) {
+      callback(err);
+    }
+    else {
+      callback(null, water);
+    }
+  });
+};
+
+getExercise = (callback) => {
+  connection.query('select * from exercise', (err, exercise) => {
+    if (err) {
+      callback(err);
+    }
+    else {
+      callback(null, exercise);
+    }
+  })
+}
+
+const getAll = (callback) => {
+  const { date } = req.params;
+  console.log(data);
+}
+
 module.exports.saveWater = saveWater;
 module.exports.saveNutrition = saveNutrition;
 module.exports.saveExercise = saveExercise;
 module.exports.saveProfile = saveProfile;
+module.exports.getFood = getFood;
+module.exports.getWater = getWater;
+module.exports.getExercise = getExercise;
+module.exports.getAll = getAll;
 
 
  // let nutrition = {

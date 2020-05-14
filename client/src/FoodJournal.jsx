@@ -49,6 +49,19 @@ class FoodJournal extends Component {
       })
   }
 
+  componentDidMount() {
+    axios.get('/food')
+      .then(response => {
+        this.setState({ listOfFoods: response.data })
+        // console.log(this.state.log);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+  }
+
+
   render() {
     const food = this.state.foodName;
     return (

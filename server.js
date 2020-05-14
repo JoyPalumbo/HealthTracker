@@ -16,6 +16,7 @@ const saveExercise = require('./database/index');
 const saveProfile = require('./database/index');
 const getFood = require('./database/index');
 const getWater = require('./database/index');
+const getExercise = require('./database/index');
 
 app.post('/water', (req, res) => {
   saveWater.saveWater(req.body.ounces);
@@ -50,7 +51,7 @@ app.post('/profile', (req, res) => {
 })
 
 app.get('/prev/:date', (req, res) => {
-  console.log(req.params.date);
+  console.log(req);
   // getPrev.getPrev((err, prev) => {
   //   if(err) {
   //     console.log('error getting previous date from db', err);
@@ -84,6 +85,18 @@ app.get('/water', (req, res) => {
     } else {
       console.log("getting water from db:", water);
       res.json(water);
+    }
+  });
+});
+
+app.get('/exercise', (req, res) => {
+  getExercise.getExercise((err, exercise) => {
+    if (err) {
+      console.log('error getting exercise from db', err);
+      res.sendStatus(500);
+    } else {
+      console.log("getting exercise from db:", exercise);
+      res.json(exercise);
     }
   });
 });

@@ -31,7 +31,7 @@ CREATE TABLE exercise (
   notes varchar(200),
   minutes int,
   reps int,
-  col TIMESTAMP NOT NULL,
+  time TIMESTAMP NOT NULL,
   PRIMARY KEY (ID)
 );
 

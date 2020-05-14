@@ -22,37 +22,23 @@ class Prev extends Component {
   }
 
   onChange = date => {
-    this.setState({ date })
-    console.log('this is your selected date', this.state.date)
-    axios.get(`http://localhost:3000/prev/${this.state.date}`, {
-      // date: this.state.date
-    })
-      .then((response) => {
-        console.log("sending date selected to server!!!!!!!!!!!!!!!!!!!", response)
-      })
-      .catch(err => {
-        console.log("ops, didn't send selected date to server", err);
-      })
+    this.setState({ date });
+    let dateInfo = this.state.date;
+    console.log('this is your selected date', dateInfo
+    )
+    // axios.get(`http://localhost:3000/prev/${dateInfo}`, {
+    //   // axios.get(`/prev/${dateInfo}`, {
+    //   // date: this.state.date
+    // })
+    //   .then((response) => {
+    //     console.log("sending date selected to server!!!!!!!!!!!!!!!!!!!", response)
+    //   })
+    //   .catch(err => {
+    //     console.log("ops, didn't send selected date to server", err);
+    //   })
   }
 
-  // handleChange(event) {
-  //   this.setState({ ounces: event.target.value })
-  // }
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   // this.setState({ total: ounces2 })
-  //   //Total is always one entry behind
-  //   console.log("is the total working?", this.state.total);
-  //   axios.post('/Prev', {
-  //     ounces: this.state.total
-  //   })
-  //     .then((response) => {
-  //       console.log("sending Prev to server", response)
-  //     })
-  //     .catch(err => {
-  //       console.log("ops, didn't send Prev to server", err);
-  //     })
-  // }
+
 
   componentDidMount() {
 
